@@ -1,8 +1,8 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-	ssr: true,
-	future: {
-		unstable_viteEnvironmentApi: true,
-	},
+  // Config options...
+  future: {
+    v8_viteEnvironmentApi: true,
+  },
 } satisfies Config;
