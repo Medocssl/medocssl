@@ -17,13 +17,16 @@
     "react-router": "latest"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "latest",
     "@react-router/dev": "latest",
+    "@tailwindcss/vite": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
     "typescript": "latest",
-    "vite": "latest"
+    "vite": "latest",
+    "vite-tsconfig-paths": "latest"
   }
 }
