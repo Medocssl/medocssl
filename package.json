@@ -8,25 +8,25 @@
     "start": "react-router-serve ./build/server/index.js"
   },
   "dependencies": {
-    "@react-router/cloudflare": "latest",
-    "framer-motion": "latest",
-    "isbot": "latest",
-    "lucide-react": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-router": "latest"
+    "@react-router/cloudflare": "7.13.1",
+    "framer-motion": "12.38.0",
+    "isbot": "5.1.36",
+    "lucide-react": "0.577.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-router": "7.13.1"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "latest",
-    "@react-router/dev": "latest",
+    "@react-router/dev": "7.13.1",
     "@tailwindcss/vite": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "autoprefixer": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
-    "typescript": "latest",
-    "vite": "latest",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "autoprefixer": "10.4.27",
+    "postcss": "8.5.8",
+    "tailwindcss": "4.2.2",
+    "typescript": "5.9.3",
+    "vite": "8.0.1",
     "vite-tsconfig-paths": "latest"
   }
 }
