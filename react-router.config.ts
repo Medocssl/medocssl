@@ -1,6 +1,5 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-  // This tells React Router to generate an index.html for Cloudflare Pages
-  ssr: false, 
+  ssr: false, // Forces SPA mode
 } satisfies Config;
