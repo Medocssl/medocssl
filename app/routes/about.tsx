@@ -21,7 +21,7 @@ export default function About() {
         <div className="prose prose-lg prose-blue mx-auto text-gray-600 leading-relaxed space-y-8">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
             MEDOCS Health Services (Pvt) Ltd was founded with a singular vision: to bridge the gap between world-class medical standards and accessible home healthcare. We believe that recovery and management of health are most effective in environments where patients feel most comfortable.
-          </p>
+          </motion.p>
           
           <div className="bg-blue-50 p-8 rounded-2xl border border-blue-100 my-10">
             <h3 className="text-2xl font-bold text-[#0A5C8A] mb-4 mt-0">Our Mission</h3>
@@ -32,7 +32,7 @@ export default function About() {
 
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
             Our team consists of highly vetted, registered medical professionals, from emergency responders to palliative care specialists. With state-of-the-art equipment and a strict adherence to international healthcare protocols, we don't just provide medical services—we provide comprehensive care partnerships.
-          </p>
+          </motion.p>
         </div>
 
       </div>
