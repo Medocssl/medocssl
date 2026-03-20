@@ -1,7 +1,6 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-  future: {
-    v8_viteEnvironmentApi: true,
-  },
+  // This tells React Router to generate an index.html for Cloudflare Pages
+  ssr: false, 
 } satisfies Config;
