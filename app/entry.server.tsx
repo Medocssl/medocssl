@@ -8,7 +8,7 @@ export default function handleRequest(
   responseHeaders: Headers,
   routerContext: EntryContext
 ) {
-  let html = renderToString(
+  const html = renderToString(
     <ReactRouterServer context={routerContext} url={request.url} />
   );
 
