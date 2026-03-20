@@ -1,14 +1,11 @@
 {
-	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "medocssl",
-	"main": "./workers/app.ts",
-	"compatibility_date": "2025-10-08",
-	"compatibility_flags": ["nodejs_compat"],
-	"observability": {
-		"enabled": true
-	},
-	"upload_source_maps": true,
-	"vars": {
-		"VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
-	}
+  "name": "medocssl",
+  "compatibility_date": "2024-11-01",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "pages_build_output_dir": "build/client",
+  "observability": {
+    "enabled": true
+  }
 }
