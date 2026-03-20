@@ -7,14 +7,14 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    reactRouter(), // React Router should generally come before Cloudflare
+    reactRouter(),
     cloudflare(),
     tsconfigPaths(),
   ],
-  ssr: {
-    resolve: {
-      external: ["node:async_hooks"], // Prevents common Cloudflare SSR errors
-      conditions: ["workerd", "worker", "browser"],
+  resolve: {
+    // This helps resolve React 19 exports correctly
+    alias: {
+      "react-dom/server": "react-dom/server.browser",
     },
   },
 });
