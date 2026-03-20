@@ -1,73 +1,64 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Activity, Shield, Clock } from "lucide-react";
+import { Shield, Truck, HeartPulse, ArrowRight } from "lucide-react";
 
 export default function Home() {
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8, ease: "easeOut" }
-  };
-
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100">
+    <div className="pt-24">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center px-6 pt-32 pb-20 text-center">
-        <motion.div {...fadeIn}>
-          <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase bg-slate-100 rounded-full text-slate-500">
-            Medocs Health Services
-          </span>
-          <h1 className="max-w-4xl text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl">
-            Healthcare. <br />
-            <span className="text-slate-400">Refined for your home.</span>
-          </h1>
-          <p className="max-w-2xl mx-auto mt-8 text-lg text-slate-500 md:text-xl">
-            Premium medical care delivered with precision. Experience the next 
-            evolution of home-based health services in Sri Lanka.
-          </p>
-          
-          <div className="flex flex-col items-center justify-center gap-4 mt-10 sm:flex-row">
-            <button className="px-8 py-4 text-white transition-all bg-blue-600 rounded-full hover:bg-blue-700 hover:scale-105 active:scale-95 font-medium">
-              Book a Service
-            </button>
-            <button className="flex items-center gap-2 px-8 py-4 font-medium transition-colors group text-slate-600 hover:text-blue-600">
-              Learn more <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
-          </div>
-        </motion.div>
-
-        {/* Hero Image Mockup Area */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 1 }}
-          className="w-full max-w-5xl mt-20 overflow-hidden border shadow-2xl rounded-2xl bg-slate-50 border-slate-100 aspect-video"
+      <section className="max-w-7xl mx-auto px-6 py-20 text-center">
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-6xl md:text-8xl font-bold tracking-tight mb-8"
         >
-          <img 
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=2000" 
-            alt="Modern Healthcare" 
-            className="object-cover w-full h-full opacity-90"
-          />
-        </motion.div>
+          Healthcare <br />
+          <span className="text-blue-600">at your doorstep.</span>
+        </motion.h1>
+        
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-xl text-gray-500 max-w-2xl mx-auto mb-10"
+        >
+          Sri Lanka's most trusted home-based medical service. Premium care,
+          professional staff, and rapid response—all in one place.
+        </motion.p>
+
+        <div className="flex justify-center gap-4">
+          <button className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-lg hover:shadow-blue-200 transition-all">
+            Start Free Trial
+          </button>
+        </div>
       </section>
 
-      {/* Glassmorphic Features Section */}
-      <section className="px-6 py-24 bg-slate-50">
-        <div className="grid max-w-6xl gap-8 mx-auto md:grid-cols-3">
+      {/* Interactive Feature Cards */}
+      <section className="bg-gray-50 py-32 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
           {[
-            { icon: <Activity />, title: "Ambulance", desc: "Rapid response ground medical transport." },
-            { icon: <Shield />, title: "Qualified Staff", desc: "Licensed professionals at your doorstep." },
-            { icon: <Clock />, title: "24/7 Care", desc: "Reliable support whenever you need us." }
-          ].map((feature, i) => (
+            { title: "Ground Ambulance", icon: <Truck className="w-6 h-6" />, desc: "Fast, reliable emergency transport." },
+            { title: "Nurse Visits", icon: <HeartPulse className="w-6 h-6" />, desc: "Professional nursing care in your bedroom." },
+            { title: "Secure Data", icon: <Shield className="w-6 h-6" />, desc: "Your medical records are safe with us." }
+          ].map((item, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -5 }}
-              className="p-8 transition-all bg-white border border-slate-200 rounded-3xl shadow-sm hover:shadow-xl"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-10 rounded-3xl border border-gray-100 shadow-sm"
             >
-              <div className="flex items-center justify-center w-12 h-12 mb-6 text-blue-600 rounded-2xl bg-blue-50">
-                {feature.icon}
+              <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                {item.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-slate-500 leading-relaxed">{feature.desc}</p>
+              <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+              <p className="text-gray-500 mb-6">{item.desc}</p>
+              <button className="flex items-center text-blue-600 font-semibold group">
+                Learn more <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
             </motion.div>
           ))}
         </div>
