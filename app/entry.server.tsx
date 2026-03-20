@@ -1,4 +1,4 @@
-import { ReactRouterServer } from "@react-router/node";
+import { ServerRouter } from "react-router"; // Use ServerRouter from 'react-router'
 import { renderToString } from "react-dom/server";
 import type { EntryContext } from "react-router";
 
@@ -9,7 +9,7 @@ export default function handleRequest(
   routerContext: EntryContext
 ) {
   const html = renderToString(
-    <ReactRouterServer context={routerContext} url={request.url} />
+    <ServerRouter context={routerContext} url={request.url} />
   );
 
   responseHeaders.set("Content-Type", "text/html");
