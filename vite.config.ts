@@ -6,9 +6,15 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
-    cloudflare(), // No need for extra config here for most setups
     tailwindcss(),
-    reactRouter(),
+    reactRouter(), // React Router should generally come before Cloudflare
+    cloudflare(),
     tsconfigPaths(),
   ],
+  ssr: {
+    resolve: {
+      external: ["node:async_hooks"], // Prevents common Cloudflare SSR errors
+      conditions: ["workerd", "worker", "browser"],
+    },
+  },
 });
